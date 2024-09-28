@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<title>Your Loyal Coco</title>
+	<link rel="icon" href="dog.png" type="image/png">
+	<link rel="stylesheet" href="shpet.css">
+
+</head>
+
+<body>
+	<header>
+		<button id="good-boi-btn">Who's a good boi?!!</button>
+
+		<h1>Welcome, Owner Shubhi 🤧, your Coco is here!</h1>
+
+		<!-- Dropdown Menu Starts-->
+		<div class="dropdown">
+			<button class="dropdown-btn">Take Him Places</button>
+			<div class="dropdown-content">
+				<a href="#" onclick="changeBackground('park')">Come with me to the park</a>
+				<a href="#" onclick="changeBackground('room')">Come with me to my pg room</a>
+				<a href="#" onclick="changeBackground('company')">Come with me to my company</a>
+				<a href="#" onclick="changeBackground('original')">Back to original</a>
+			</div>
+		</div>
+		<!-- Dropdown Menu Ends-->
+
+	</header>
+
+
+	<div class="container">
+		<nav class="navbar">
+			<h3>My Commands</h3>
+			<div class="card-button" onclick="showImage('image6')">Say Hi to your owner, Coco!</div>
+			<div class="card-button" onclick="showImage('image1')">Bow down to me, Coco!</div>
+			<div class="card-button" onclick="showImage('image2')">Awwww, He angwy!</div>
+			<div class="card-button" onclick="showImage('image3')">Be a Good Boi and Sit</div>
+			<div class="card-button" onclick="showImage('image4')">Lay Down for back rubs!</div>
+			<div class="card-button" onclick="showImage('image5')">Twerk for Treats!</div>
+
+
+			<!-- Health Bars Status Starts -->
+			<div class="status-bar-container">
+				<div class="status-bar">
+					<div id="health-bar" class="bar" style="width: 100%;"></div>
+					<div class="bar-label">Hunger</div>
+				</div>
+				<div class="status-bar">
+					<div id="mood-bar" class="bar" style="width: 100%;"></div>
+					<div class="bar-label">His Mood</div>
+				</div>
+				<div class="status-bar">
+					<div id="energy-bar" class="bar" style="width: 100%;"></div>
+					<div class="bar-label">Spank meter</div>
+				</div>
+			</div>
+
+			<div class="control-buttons">
+				<button id="health-btn" onclick="increaseHealth()">Feed Him</button>
+				<button id="mood-btn" onclick="increaseMood()">Play with him</button>
+				<button id="spank-btn" onclick="increaseEnergy()">Spank him</button>
+			</div>
+			<!-- Health Bars Status End -->
+
+			<div class="input-container">
+				<input id="custom-input" class="custom-input" type="text">
+			</div>
+
+		</nav>
+
+		<main class="article">
+			<div class="image-container">
+				<img id="image1" class="image" src="https://i.ibb.co/k2G1tD8/Bow.png" alt="Whoopsie! He is lost :(">
+				<img id="image2" class="image" src="https://i.ibb.co/NTfGQBF/Claw.png" alt="Whoopsie! He is lost :(">
+				<img id="image3" class="image" src="https://i.ibb.co/Rjy84Xr/Kneel.png" alt="Whoopsie! He is lost :(">
+				<img id="image4" class="image" src="https://i.ibb.co/Pcvjq56/Sleep.png" alt="Whoopsie! He is lost :(">
+				<img id="image5" class="image" src="https://i.ibb.co/q9th1HQ/Twerk.png" alt="Whoopsie! He is lost :(">
+				<img id="image6" class="image" src="https://i.ibb.co/1qhMNw2/Wave.png" alt="Whoopsie! He is lost :(">
+
+				<div class="shadow"></div>
+			</div>
+		</main>
+
+		<!-- Toast Message Box Starts -->
+		<div id="good-boi-toast" class="toast">
+			<div class="toast-message">I am the good boi, my owner! 😍</div>
+		</div>
+
+		<div id="spank-toast" class="toast">
+			<div class="toast-message">Spank me more, please!!! 😣</div>
+		</div>
+
+		<div id="health-toast" class="toast">
+			<div class="toast-message">Yummmm 😋</div>
+		</div>
+
+		<div id="mood-toast" class="toast">
+			<div class="toast-message">Yayyyy!!! 😍</div>
+		</div>
+		<!-- Toast Message Box Ends -->
+
+	</div>
+
+	<!-- Popup outside container -->
+	<div id="overlay"></div> 
+	<div id="popup" class="popup">
+		<h1  class="gradient-text">KING OF PAWS</h2>
+		<h2 class="popup-story">
+			In "King of Tails," Shubhi affectionately calls her friend, "Coco the pup", fully embracing a playful dynamic that highlights their unique bond. She teases him, encouraging his pupful side as they engage in lighthearted antics that mimic pup play—think silly games, spontaneous adventures, and moments where she leads him with a gentle command. Coco although shy gives in, relishing the freedom to be silly and carefree pupper. Their friendship thrives on this joyful connection, teases and laughter.
+		</h3>
+	</div>
+
+
+	<script src="shpet.js"></script>
+	<script src="shpetpopup.js"></script>
+</body>
+</html>

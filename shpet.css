@@ -1,0 +1,455 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+
+@font-face {
+    font-family: 'Baskerville Old Face Caps';
+    src: url('fonts/Baskerville-Old-Face-Caps-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: #333;
+    /*background-image: radial-gradient(ellipse at bottom left, #00a3cb 40%, rgba(0, 163, 203, 0) 40%),
+                      radial-gradient(ellipse at top right, #00a3cb 30%, rgba(0, 163, 203, 0) 30%),
+                      linear-gradient(to right, #625793 0%, #625793 33%, #d55d64 33%, #d55d64 66%, #e49129 66%);*/
+    /*background-size: 50% 100%;*/
+    background-image: url("dalmatian-spots.svg");
+
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+    /* Space between items */
+    align-items: center;
+    /* Align items vertically center */
+}
+
+h1 {
+    margin: 20px;
+    font-family: Pacifico;
+}
+
+h3 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 60px);
+    /* Adjust based on header height */
+}
+
+.navbar {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    margin: 20px;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+    /* Black border */
+    border-radius: 10px;
+    /* Rounded corners */
+    overflow-y: auto;
+}
+
+.card-button {
+    /*width: 200px;*/
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    border: 2px solid #007bff;
+    /* Blue border */
+    border-radius: 10px;
+    /* Rounded corners */
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /* Slightly more opaque on hover */
+    border-color: #0056b3;
+    /* Darker border color on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-button:active {
+    background: rgba(255, 255, 255, 0.3);
+    /* Even more opaque on click */
+    border-color: #003d7a;
+    /* Even darker border color on click */
+}
+
+.article {
+    flex: 1;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    overflow-y: auto;
+    border: 2px solid black;
+    /* Black border */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+.shadow {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 125px 30px rgba(0, 0, 0, 0.8);
+    top: 500px;
+    left: 830px;
+    transform: translate(-50%, -50%);
+}
+
+.image-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    /* Ensure it fills the container */
+    overflow: visible;
+}
+
+.image {
+    position: absolute;
+    top: 150px;
+    left: 500px;
+    width: 650px;
+    /* Ensure images fill the container */
+    height: 650px;
+    object-fit: contain;
+    /* Ensure images cover the area */
+    display: none;
+    /* Hide all images initially */
+    z-index: 1;
+}
+
+.image.active {
+    display: block;
+    /* Show the active image */
+}
+
+@media (max-width: 1000px) {
+    .image-container {
+        width: 100%;
+        /* Full width for smaller screens */
+        height: auto;
+        /* Adjust height based on content */
+    }
+
+    .image {
+        position: relative;
+        /* Adjust positioning */
+        top: 50px;
+        /* Adjust top positioning */
+        left: 0px;
+        /* Center image */
+        width: 400px;
+        /* Adjust width to fit smaller screens */
+        height: 400px;
+        /* Maintain aspect ratio */
+        max-width: 400px;
+        /* Ensure it doesn't exceed a reasonable size */
+        transform: none;
+        /* Remove horizontal centering */
+    }
+
+    .shadow {
+        width: 100px;
+        /* Smaller shadow */
+        height: 25px;
+        /* Adjust height */
+        top: 250px;
+        /* Adjust top positioning */
+        left: 210px;
+        /* Center horizontally */
+        transform: translate(-50%, -50%);
+        /* Center shadow */
+    }
+}
+
+/* Health Bar Related*/
+
+.status-bar-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.status-bar {
+    position: relative;
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #444;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 5px;
+    background-color: #4caf50;
+    /* Green color */
+}
+
+.bar-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+}
+
+.control-buttons {
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.control-buttons button {
+    padding: 10px 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: #007bff;
+    /* Blue background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.control-buttons button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.control-buttons button img {
+    margin-right: 10px;
+    width: 2px;
+    height: 2px;
+}
+
+/* Health Bar Related Ends*/
+
+/* Toast Related Starts*/
+
+#good-boi-btn {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    border: 2px solid #007bff;
+    /* Blue border */
+    border-radius: 10px;
+    /* Rounded corners */
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+#good-boi-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /* Slightly more opaque on hover */
+    border-color: #0056b3;
+    /* Darker border color on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.toast {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    /* Slightly larger border radius */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    /* Larger shadow */
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    text-align: center;
+    /* Center text */
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.toast-message {
+    font-size: 24px;
+    /* Increased font size */
+    color: #000;
+}
+
+/* Toast Ends */
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    /* Position dropdown content directly below the button */
+    left: 0;
+}
+
+/* Dropdown Items */
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+/* Show the dropdown content on hover over dropdown or button */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+
+/*Dropdown End*/
+
+/* Custom Input Box and Button Styles */
+.input-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-input {
+    width: 200px;
+    height: 30px;
+    /*border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;*/
+    background: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0);
+    padding: 5px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+/* Custom Input Box and Button Styles End */
+
+/* Popup Styles */
+.popup {
+    display: none; /* Change from show to none for initial state */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 30px; /* Add some padding */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    z-index: 1000;
+    width: 40%;
+    height: 60%;
+    overflow: hidden;
+    background: url(feather.png);
+    background-size: contain;
+    flex-direction: column; /* Arrange children vertically */
+}
+
+.popup.show {
+    display: flex;
+}
+
+#overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    z-index: 1000; /* Ensure overlay is below the popup */
+}
+
+.gradient-text {
+    justify-content: center;
+    font-family: 'Baskerville Old Face Caps'; /* Your custom font */
+    font-size: 4rem; /* Adjust size as needed */
+    background: linear-gradient(90deg, rgba(244,192,0,1) 26%, rgba(250,208,49,1) 58%, rgb(36, 29, 1) 100%); /* Your gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+    background-clip: text; /* For other browsers */
+}
+
+.popup-story {
+    color: #ffffff;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* popup style end */
